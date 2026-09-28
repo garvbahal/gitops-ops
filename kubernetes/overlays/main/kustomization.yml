@@ -12,4 +12,4 @@ replicas:
 
 images:
   - name: garvbahal/gitops-codebase
-    newTag: 0c8e4648910dea73c377c67bc8f6e4a66bb1baeb
+    newTag: 1dfc3fd192d875ae3240b29c036b7b458e62c8ba
