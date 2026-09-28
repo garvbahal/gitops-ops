@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: backend-main
+  namespace: agrocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/garvbahal/gitops-ops
+    targetRevision: main
+    path: kubernetes/overlays/main
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: backend-main
+
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
