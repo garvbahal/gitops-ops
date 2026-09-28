@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: backend-main
+
+resources:
+  - ../../base
+
+replicas:
+  - name: backend-deployment
+    count: 4
+
+images:
+  - name: garvbahal/gitops-codebase
+    newTag: 5e923c5fad9f899a05d4acc3cc2865057abd908b
